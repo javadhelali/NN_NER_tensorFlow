@@ -37,7 +37,7 @@ def load_word_embedding_dict(embedding,embedding_path,logger):
     if embedding == 'word2vec':
         # loading word2vec
         logger.info("Loading word2vec ...")
-        word2vec = Word2Vec.load_word2vec_format(embedding_path, binary=True)
+        word2vec = Word2Vec.load(embedding_path)
         embedd_dim = word2vec.vector_size
         return word2vec, embedd_dim, False
     elif embedding == 'glove':
